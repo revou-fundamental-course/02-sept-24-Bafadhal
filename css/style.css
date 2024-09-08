@@ -10,9 +10,10 @@
 }
 
 .selection-btn {
-    height: 32px;
+    height: 40px;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .bisque-color {
@@ -33,7 +34,21 @@
     background-color: lightgreen;
 }
 
+.keliling-segitiga-header {
+    text-align: center;
+    border: none;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin: 0;
+    background-color: lightgreen;
+}
+
 .luas-segitiga-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.keliling-segitiga-content {
     display: flex;
     flex-direction: column;
 }
@@ -42,7 +57,17 @@
     height: 300px;
     width: 300px;
     border: none;
-    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtQj3damdUMrB7NGGoc1qp7hNlWdpC_GJxnkiaA9JpyXEbPzc24PEalidWP4du9LY7s1g51LweT-7lqlh83cXAf3fTHFTZrDkSlStPgey9bv8LvWrxvV1YnGNb3VRrOXcms6o6WVSmZv4/s320/Rumus+Luas+Segitiga.png);
+    background-image: url(https://asset-a.grid.id//crop/0x0:0x0/700x0/photo/2021/01/15/3991804788.jpg);
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+}
+
+.keliling-segitiga-img {
+    height: 300px;
+    width: 300px;
+    border: none;
+    background-image: url(https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/01/15/1853786887.jpg);
     background-size: cover;
     background-position: center;
     align-self: center;
@@ -52,10 +77,14 @@
     text-align: center;
 }
 
+.keliling-segitiga-form-header {
+    text-align: center;
+}
+
 .input-wrapper {
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -78,4 +107,40 @@ input[type=number] {
 
 .main-content>aside {
     flex: 1;
+}
+
+.hr-kiri {
+    margin-top: 59px;
+}
+
+.hitung-button {
+    background-color: lightgreen;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reset-button {
+    background-color: lightseagreen;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
