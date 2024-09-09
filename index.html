@@ -98,30 +98,6 @@
                         <button type="button" class="hitung-button" onclick="hitungKeliling()">Hitung Keliling</button>
                     </div>
 
-                    <script>
-                        function hitungKeliling() {
-                            // Mengambil nilai sisi-sisi segitiga
-                            let s1 = parseFloat(document.getElementById("sisiA").value);
-                            let s2 = parseFloat(document.getElementById("sisiB").value);
-                            let s3 = parseFloat(document.getElementById("sisiC").value);
-
-                            // Mengecek jika input tidak kosong atau bukan angka
-                            if (isNaN(s1) || isNaN(s2) || isNaN(s3)) {
-                                document.getElementById("keliling-result").innerText = "Masukkan nilai sisi yang valid!";
-                                return;
-                            }
-
-                            // Menghitung keliling segitiga
-                            let result = s1 + s2 + s3;
-
-                            // Menampilkan hasil perhitungan yang tersusun ke bawah
-                            document.getElementById("keliling-result").innerText = 
-                                `K = S1 + S2 + S3\n` +
-                                `K = ${s1} + ${s2} + ${s3}\n` +
-                                `K = ${result}`;
-                        }
-                    </script>
-
                     <div class="container2">
                         <button type="button" class="reset-button"
                             onclick="document.getElementById('keliling-result').innerText = ''; document.getElementById('sisiA').value = ''; document.getElementById('sisiB').value = ''; document.getElementById('sisiC').value = '';">Reset</button>
