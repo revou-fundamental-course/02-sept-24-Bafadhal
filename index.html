@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\style.css">
+    <script src="js\sript.js"></script>
 </head>
 
 <body>
@@ -36,27 +37,26 @@
     
                 <hr class="hr-kiri" />
     
-                <form>
+                <form onsubmit="return false;">
                     <header>
                         <h1 class="luas-segitiga-form-header">Hitung Luas Segitiga</h1>
                     </header>
-    
-                    <div class="input-wrapper">
-                        <input type="number" placeholder="Panjang Alas">
 
+                    <div class="input-wrapper">
+                        <input id="alas" type="number" placeholder="Panjang Alas">
                     </div>
                     <div class="input-wrapper">
-                        <input type="number" placeholder="Tinggi">
+                        <input id="tinggi" type="number" placeholder="Tinggi">
                     </div>
-    
-                    <p id="result">Hasil Perhitungan</p>
-    
+
+                    <p id="result"></p>
+
                     <div class="container">
-                        <button class="hitung-button">Hitung</button>
+                        <button type="button" class="hitung-button" onclick="hitungLuas()">Hitung Luas</button>
                     </div>
 
                     <div class="container2">
-                        <button class="reset-button">Reset</button>
+                        <button type="button" class="reset-button" onclick="document.getElementById('result').innerText = ''; document.getElementById('alas').value = ''; document.getElementById('tinggi').value = '';">Reset</button>
                     </div>
                 </form>
             </aside>
@@ -77,29 +77,54 @@
     
                 <hr />
     
-                <form>
+                <form onsubmit="return false;"> <!-- Prevent form submit -->
                     <header>
                         <h1 class="keliling-segitiga-form-header">Hitung Keliling Segitiga</h1>
                     </header>
-    
+
                     <div class="input-wrapper">
-                        <input type="number" placeholder="Sisi A">
+                        <input id="sisiA" type="number" placeholder="Sisi A">
                     </div>
                     <div class="input-wrapper">
-                        <input type="number" placeholder="Sisi B">
+                        <input id="sisiB" type="number" placeholder="Sisi B">
                     </div>
                     <div class="input-wrapper">
-                        <input type="number" placeholder="Sisi C">
-                    </div>
-    
-                    <p id="result">Hasil Perhitungan</p>
-    
-                    <div class="container">
-                        <button class="hitung-button">Hitung</button>
+                        <input id="sisiC" type="number" placeholder="Sisi C">
                     </div>
 
+                    <p id="keliling-result"></p>
+
+                    <div class="container">
+                        <button type="button" class="hitung-button" onclick="hitungKeliling()">Hitung Keliling</button>
+                    </div>
+
+                    <script>
+                        function hitungKeliling() {
+                            // Mengambil nilai sisi-sisi segitiga
+                            let s1 = parseFloat(document.getElementById("sisiA").value);
+                            let s2 = parseFloat(document.getElementById("sisiB").value);
+                            let s3 = parseFloat(document.getElementById("sisiC").value);
+
+                            // Mengecek jika input tidak kosong atau bukan angka
+                            if (isNaN(s1) || isNaN(s2) || isNaN(s3)) {
+                                document.getElementById("keliling-result").innerText = "Masukkan nilai sisi yang valid!";
+                                return;
+                            }
+
+                            // Menghitung keliling segitiga
+                            let result = s1 + s2 + s3;
+
+                            // Menampilkan hasil perhitungan yang tersusun ke bawah
+                            document.getElementById("keliling-result").innerText = 
+                                `K = S1 + S2 + S3\n` +
+                                `K = ${s1} + ${s2} + ${s3}\n` +
+                                `K = ${result}`;
+                        }
+                    </script>
+
                     <div class="container2">
-                        <button class="reset-button">Reset</button>
+                        <button type="button" class="reset-button"
+                            onclick="document.getElementById('keliling-result').innerText = ''; document.getElementById('sisiA').value = ''; document.getElementById('sisiB').value = ''; document.getElementById('sisiC').value = '';">Reset</button>
                     </div>
                 </form>
             </aside>
